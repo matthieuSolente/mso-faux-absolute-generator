@@ -1,10 +1,8 @@
-# mso faux absolute generator
+# MSO Faux Absolute Positioning for Overlapping Email Elements in Outlook
+
 A generator to create vertical absolute positioning for Outlook, without VML
-
-
 This generator allows you to create a floating or absolute positioning on Outlook without the need to use the VML. 
 
-# MSO Faux Absolute Positioning for Overlapping Email Elements in Outlook
 
 Here is a way to create an **absolute positionning in Outlook without VML**.
 See a basic example on my [codePen](https://codepen.io/matthieuSolente/pen/ZEqXgPL) 
