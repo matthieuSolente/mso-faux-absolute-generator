@@ -2,56 +2,54 @@
 /************ MSO faux absolute CODE *******/
 /***********************************************/
 (function($){
- var generateCodeBegin,generatePreview,imgUrl,bgFallbackColor,imgWidth,frameWidth,imgHeight,frameTopPosition,frameTbPadding,frameLrPadding;
+ var generateCodeBegin,generatePreview,imgUrl,frameText,frameColor,frameBgColor,frameFontFamily,frameFontSize,frameTextAlign,frameLeftPosition,emailWidth,frameWidth,frameTopPosition,frameTbPadding,frameLrPadding;
 
  function updateButton(){ 
-    imgUrl=$('#imgUrl').val();
-    bgFallbackColor=$('#bgFallbackColor').val();
-    imgWidth=$('#imgWidth').val();
-    frameWidth=$('#frameWidth').val();
-    imgHeight=$('#imgHeight').val();
-    frameTopPosition=$('#frameTopPosition').val();
-    frameTbPadding=$('#frameTbPadding').val();
-    frameLrPadding=$('#frameLrPadding').val();
-
-    generatePreview='<span style="mso-element-wrap:none;mso-element-left:center;font-size:0;"></span><div style="max-height:0px;mso-element-wrap:no-wrap-beside;mso-element-left:center;background-color:'+bgFallbackColor+'"><img src="'+imgUrl+'" alt="" width="'+imgWidth+'" border="0" style="width:100%;max-width:'+imgWidth+'px;display:block;border:0;margin:0 auto;"></div><div  style="mso-element-frame-width:'+frameWidth+'px;mso-element-wrap:no-wrap-beside; mso-element-left:center;mso-margin-top-alt:'+frameTbPadding+'px;max-width:'+frameWidth+'px;margin:0 auto;height:'+imgHeight+'px;font-family: Arial,sans-serif;font-size:1em;line-height:1.5;mso-line-height-rule-alt:150%; color: #ffffff;"><div style="padding:'+frameTbPadding+'px '+frameLrPadding+'px"><p id="previewText" contenteditable="true">Your content</p></div></div>'
-    generateCodeBegin = '&lt;span style=&quot;mso-element-wrap:none;mso-element-left:center;font-size:0;&quot;&gt;&lt;/span&gt;<br/>&lt;div style=&quot;max-height:0px;mso-element-wrap:no-wrap-beside;mso-element-left:center;background-color:'+bgFallbackColor+'&quot;&gt;<br/>&lt;img src=&quot;'+imgUrl+'&quot; alt=&quot;&quot; width=&quot;'+imgWidth+'&quot; border=&quot;0&quot; style=&quot;width:100%;max-width:'+imgWidth+'px;display:block;border:0;margin:0 auto;&quot;&gt;&lt;/div&gt;<br/>&lt;div  style=&quot;mso-element-frame-width:'+frameWidth+'px;mso-element-wrap:no-wrap-beside; mso-element-left:center;mso-margin-top-alt:'+frameTbPadding+'px;max-width:'+frameWidth+'px;margin:0 auto;height:'+imgHeight+'px;font-family: Arial,sans-serif;font-size:1em;line-height:1.5;mso-line-height-rule-alt:150%; color: #ffffff;&quot;&gt;<br/>&lt;div style=&quot;padding:'+frameTbPadding+'px '+frameLrPadding+'px&quot;&gt;'; 
-    generateCodeEnd='&lt;/div&gt;&lt;/div&gt;';
+    imgUrl = $('#imgUrl').val();
+    emailWidth = $('#emailWidth').val();
+    frameWidth = $('#frameWidth').val();
+    frameText = $('#frameText').val();
+    frameColor = $('#frameColor').val();
+    frameBgColor = $('#frameBgColor').val();
+    frameFontFamily = $('#frameFontFamily').val();
+    frameFontSize = $('#frameFontSize').val();
+    frameTopPosition = $('#frameTopPosition').val();
+    frameTbPadding = $('#frameTbPadding').val();
+    frameLrPadding = $('#frameLrPadding').val();
+    frameTextAlign =$('#frameTextAlign').val();
+    if($('#btnBgColor').is(':checked')){
+      $('#bgColorInput').show();
+      frameBgColor = 'background-color:'+frameBgColor+'';
+    }else{
+      $('#bgColorInput').hide();
+      frameBgColor = '';
+    } 
+    
+        generatePreview ='<span style="mso-element-wrap:none;mso-element-left:center;font-size:0;"></span><div style="max-height:'+frameTopPosition+'px;max-width:'+emailWidth+'px; mso-element-wrap:no-wrap-beside;mso-element-left:center;margin: 0 auto;"><img src="'+imgUrl+'" alt="" width="'+emailWidth+'" border="0" style="width:100%;max-width:'+emailWidth+'px;display:block;border:0;margin:0 auto;"></div></div><div style="mso-element-frame-width:'+frameWidth+'px;mso-element-wrap:no-wrap-beside; mso-element-left:center;mso-margin-top-alt:'+frameTopPosition+'px;max-width:'+frameWidth+'px;margin:0 auto;font-family: '+frameFontFamily+';font-size:'+frameFontSize+'px;line-height:1.5;mso-line-height-rule-alt:150%; color:'+frameColor+';'+frameBgColor+';padding:'+frameTbPadding+'px '+frameLrPadding+'px;text-align:'+frameTextAlign+';display:block;position:relative;opacity:0.999"><!--[if (gte mso 9)|(IE)]><table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td align="center" style="font-family: '+frameFontFamily+';font-size:'+frameFontSize+'px;line-height:1.5;mso-line-height-rule-alt:150%; color:'+frameColor+';padding:'+frameTbPadding+'px '+frameLrPadding+'px;'+frameBgColor+'"><![endif]--><p style="margin:0">'+frameText+'</p><!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--></div>';
+        generateCodeBegin='&lt;span style="mso-element-wrap:none;mso-element-left:center;font-size:0;"&gt;&lt;/span&gt;&lt;div style="max-height:'+frameTopPosition+'px;max-width:'+emailWidth+'px; mso-element-wrap:no-wrap-beside;mso-element-left:center;margin: 0 auto;"&gt;&lt;img src="'+imgUrl+'" alt="" width="'+emailWidth+'" border="0" style="width:100%;max-width:'+emailWidth+'px;display:block;border:0;margin:0 auto;"&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="mso-element-frame-width:'+frameWidth+'px;mso-element-wrap:no-wrap-beside; mso-element-left:center;mso-margin-top-alt:'+frameTopPosition+'px;max-width:'+frameWidth+'px;margin:0 auto;font-family: '+frameFontFamily+';font-size:'+frameFontSize+'px;line-height:1.5;mso-line-height-rule-alt:150%; color:'+frameColor+';'+frameBgColor+';padding:'+frameTbPadding+'px '+frameLrPadding+'px;text-align:'+frameTextAlign+';display:block;position:relative;opacity:0.999"&gt;&lt;!--[if (gte mso 9)|(IE)]&gt;&lt;table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"&gt;&lt;tr&gt;&lt;td align="center" style="font-family: '+frameFontFamily+';font-size:'+frameFontSize+'px;line-height:1.5;mso-line-height-rule-alt:150%; color:'+frameColor+';padding:'+frameTbPadding+'px '+frameLrPadding+'px;'+frameBgColor+';"&gt;&lt;![endif]--&gt;&lt;p style="margin:0"&gt;'+frameText+'&lt;/p&gt;&lt;!--[if (gte mso 9)|(IE)]&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;![endif]--&gt;&lt;/div&gt;';
+  
   $('#preview').html(generatePreview);
   $('#codeBegin').html(generateCodeBegin);
-  $('#codeEnd').html(generateCodeEnd);
 }
 updateButton();
 /*end UpdateButton*/
+let filtersChange = $('.wrapper').find('select,input');
+filtersChange.on('input change', function(e) {
+  updateButton();
+});
 $(document).ready(function(){
   updateButton();
-});
-$( "input, select" ).on('change',function() {
-  updateButton();
-});
+})
 })(jQuery);
 
 
-/***********************************************/
-/* COPY PASTE   */
-/***********************************************/
-function copyPaste(element) {
-    var $temp = $("<textarea>");
-    $("body").append($temp);
-    $temp.val($(element).parent().find('.copyPaste').text()).select();
-    document.execCommand("copy");
-    $temp.remove();
+function copyBegin(){
+    var text = document.getElementById("codeBegin").innerText;
+    navigator.clipboard.writeText(text);
+    alert('copied');
 }
-/***********************************************/
-/************ COPY TO CLIPBOARD FUNCTION *******/
-/***********************************************/
-
-  $('.copyPaste').wrap('<div class="copyPaste-block"></div>');   
-    $('.copyPaste-block').each(function(){     
-      $(this).append('<button type="button" class="copy" onclick="copyPaste(this)" aria-hidden="false" aria-label="Copy to clipboard"><span class="visually-hidden">Copy to Clipboard</span></button>');
-    });
-
-$(function () {
- thisyear = new Date().getFullYear();
- $('#year').text(thisyear);
-});
+function copyEnd(){
+    var text = document.getElementById("codeEnd").innerText;
+    navigator.clipboard.writeText(text);
+    alert('copied');
+}
