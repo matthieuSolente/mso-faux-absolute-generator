@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="button-generator">
-    <main class="wrapper">
+   <main class="wrapper">
       <div class="flex-container">
         <div class="flex-row">
           <div class="flex-col-xs-12">
@@ -18,81 +18,132 @@
       </div>
       <div class="flex-container">
         <div class="flex-row">
-          <div class="flex-col-sm-6">
+          <div class="flex-col-sm-5">
             <div class="button-generator--row">
               <div class="button-generator--half-row">
-                <label for="imgUrl">Your Image</label>
+                <label for="imgUrl">Your Image Url</label>
                 <input type="text" placeholder="https://" id="imgUrl" value="https://picsum.photos/id/237/600/300">
               </div>
             </div>
             <div class="button-generator--row">
               <div class="button-generator--half-row">
-                <label for="imgWidth">Image width</label>
-                <input type="number" name="Image width" id="imgWidth" value="600">
+                <label for="emailWidth">Email width</label>
+                <input type="number" name="Image width" id="emailWidth" value="600">
                 <aside class="px">px</aside>
+              </div>  
+            </div>
+             <div class="button-generator--row">
+              <div class="button-generator--half-row">
+                <label for="frameText">Your text</label>
+                <input type="text" name="button-text" id="frameText" value="Tell me something">
               </div>
               <div class="button-generator--half-row">
-                <label for="imgHeight">Image height</label>
-                <input type="number" name="frame Height" id="imgHeight" value="300">
-                <aside class="px">px</aside>
+                <label for="frameTextAlign">Text align</label>
+                <select id="frameTextAlign" name="button-align-button">
+                  <option value="left">Left</option>
+                  <option value="center" selected="selected">Center</option>
+                  <option value="right">Right</option>
+                </select>
+              </div>
+            </div>
+
+             <div class="button-generator--row">
+                <div class="button-generator--half-row">
+                  <div class="checkbox">
+                    <input class="inline checkbox" type="checkbox" name="frame-Bg-Color" id="btnBgColor">
+                    <label class="inline" for="btnBgColor">Background color ?</label>
+                  </div>
+                </div>
+              </div>
+              <div id="bgColorInput" class="button-generator--row">
+                <div class="button-generator--half-row">
+                  <label for="frameBgColor">Background-color :</label>
+                  <input type="text" name="frame-Bg-Color" id="frameBgColor" value="#000001" data-coloris>
+                </div>
+                
+              </div>
+              <div class="button-generator--row">
+              <div class="button-generator--half-row">
+                <label for="frameColor">Text color</label>
+                <input type="text" name="Color" id="frameColor"  value="#fff" data-coloris>
               </div>
             </div>
             <div class="button-generator--row">
               <div class="button-generator--half-row">
-                <label for="bgFallbackColor">Fallback color</label>
-                <input type="text" name="Fallback color" id="bgFallbackColor" value="#000001" data-coloris>
-              </div>
-            </div>
-            <div class="button-generator--row">
-              <div class="button-generator--half-row">
-                <label for="frameWidth">Frame Width</label>
+                <label for="frameWidth">Frame/text box Width</label>
                 <input type="number" name="frame width" id="frameWidth" value="400">
                 <aside class="px">px</aside>
               </div>
             </div>
+             <div class="button-generator--row">
+              <div class="button-generator--half-row">
+                <label for="frameFontSize">font size :</label>
+                <input type="number" name="button-font-size" id="frameFontSize" value="14">
+              </div>
+              <div class="button-generator--half-row">
+                <label for="frameFontFamily">font family :</label>
+                <select id="frameFontFamily" name="frameFontFamily">
+                  <option name="font-family-arial" value="Arial, sans-serif" selected="selected">Arial, sans-serif</option>
+                  <option name="font-family-verdana" value="Verdana, Arial, sans-serif">Verdana, Arial, sans-serif</option>
+                  <option name="font-family-tahoma" value="Tahoma, Arial, sans-serif">Tahoma, Arial, sans-serif</option>
+                  <option name="font-family-georgia" value="Georgia, serif">Georgia, serif</option>
+                  <option name="font-family-times" value="'Times New Roman', Times, serif">"Times New Roman", Times, serif</option>
+                </select>
+              </div>
+            </div>
+
+            
             <div class="button-generator--row">
               <div class="button-generator--half-row">
-                <label for="frameTbPadding">Top Bottom Padding</label>
+                <label for="frameTbPadding">Text block Top Bottom Padding</label>
                 <input type="number" name="Padding" id="frameTbPadding" value="20">
                 <aside class="px">px</aside>
               </div>
               <div class="button-generator--half-row">
-                <label for="frameLrPadding">Left/Right Padding</label>
+                <label for="frameLrPadding">Text block Left/Right Padding</label>
                 <input type="number" name="Padding" id="frameLrPadding" value="20">
                 <aside class="px">px</aside>
               </div>
             </div>
+            <div class="button-generator--row">
+              <div class="button-generator--half-row">
+                <label for="frameTopPosition">Text block top position</label>
+                <input type="number" name="Position" id="frameTopPosition" value="100">
+                <aside class="px">px</aside>
+              </div>
+            </div> 
           </div>
-          <div class="flex-col-sm-6">
+          <div class="flex-col-sm-7">
             <div id="preview"></div>
           </div>
         </div>
         <div class="flex-row">
           <div class="code-output">
             <p>Add the following right after the opening &lt;body&gt; tag…</p>
+            <div class="copyPaste-block">
             <div class="copyPaste" id="codeBegin"></div>
-            <p>…and this at the end of the overlayed content.</p>
-            <div class="copyPaste" id="codeEnd"></div>
+            <button type="button" class="copy" id="copyBegin" onclick="copyBegin(this)" aria-hidden="false" aria-label="Copy to clipboard">Copy to Clipboard</button>
           </div>
+        </div>
         </div>
         <div class="flex-row">
           <p>This tool uses mso properties to create a bulletproof and accessible background image on Outlook. No VML here. The mso-element-wrap and mso-element-left properties create frames. For this to work, you need to avoid nesting the frame inside tables. You can use tables before and after the block, but if you place it inside a table, the properties won't work anymore. If you're coding with divs, just avoid using conditional comments around the frame.</p>
-          <p>If you want to add a CTA link inside the frame, use the pedantic semantic button from <a target=_blank" href="https://www.goodemailcode.com/email-code/link-button">GoodEmailCode</a>,This is the one that will work best. You can use <a target="_blank" href="https://codepen.io/matthieuSolente/pen/abRpPOX">my generator</a> !</p>
+          <p>If you want to add a CTA link inside the frame, use the pedantic semantic button from <a target="_blank" href="https://www.goodemailcode.com/email-code/link-button">GoodEmailCode</a>,This is the one that will work best. You can use <a target="_blank" href="https://codepen.io/matthieuSolente/pen/abRpPOX">my generator</a> !</p>
           <h3>How it works :</h3>
           <ol>
-          <li>1-Enter the URL of the image to display. </li>
-          <li>2-Set its width and height. In the code, the image is encapsulated in a div which is given a maximum height of 0px. This way, the content (text, title, button) rises above the image. The indicated height is transferred to the content block: this way, the floating only takes place at the level of the background image and the following content does not accidentally float on the image.</li>
+          <li>1-Enter the URL of the image to display and set the width of your email. </li>
+          <li>2-In the code, the image is encapsulated in a div which is given a maximum height of 0px. This way, the content (text, title, button) rises above the image. The indicated height is transferred to the content block: this way, the floating only takes place at the level of the background image and the following content does not accidentally float on the image.</li>
           <li>3-the width of the frame corresponds to the desired width of the content block (text, title, cta). In outlook, especially frames, it is essential to define a width because the horizontal padding does not work.</li>
           <li>4-The horizontal and vertical padding are used for other email clients and allow you to position the content block on the image. For Outlook, the mso-margin-top-alt property takes the value of the top/bottom padding.</li>
         </ol>
-          <p>Do not hesitate to consult my <a href="https://github.com/matthieuSolente/mso-faux-absolute-generator" target=_blank">github page</a> on the subject.</p>
+          <p>Do not hesitate to consult my <a href="https://github.com/matthieuSolente/mso-faux-absolute" target="_blank">github page</a> on the subject.</p>
           <p>The sample text is there to serve as a visual aid for adjusting content position.</p>
-          <p>you can learn how to make everything responsive, by looking at <a href="https://codepen.io/matthieuSolente/pen/ZEqXgPL" target=_blank"> this codepen</a>
+          <p>you can learn how to make everything responsive, by looking at <a href="https://codepen.io/matthieuSolente/pen/ZEqXgPL" target="_blank"> this codepen</a>
 </p>
         </div>
       </div>
     </main>
-   <footer>
+    <footer>
       <p>© Matthieu Solente <span id="year"></span> View on Github <a href="https://github.com/matthieuSolente/mso-faux-absolute-generator"><img src="https://github.com/matthieuSolente/mso-faux-absolute-generator/blob/main/img/github-mark-white.png?raw=true" alt="my github page" style="width:20px"></a></p>
     </footer>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
