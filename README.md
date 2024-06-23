@@ -12,7 +12,7 @@ Here is my [codePen collection](https://codepen.io/collection/RzBzjM) on the sub
 For this to work, don't wrap all the content of your email in a table :According to my tests in any case, encapsulating the mso block in a table container can be problematic and break the desired effect.Inside the block, you can use tables sparingly to perfect the rendering on Outlook (add padding etc.) 
 You can also use table Before or after the **MSO Faux absolute** block.
 
-There are several ways to do it, several possible layouts to make these properties work and create for example a background image with text on top. Test [my generator](https://codepen.io/matthieuSolente/pen/poqbPaj) if you want to avoid spending too much time on it!
+There are several ways to do it, several possible layouts to make these properties work and create for example a background image with text on top. Test [my generator](https://matthieusolente.github.io/mso-faux-absolute-generator/) if you want to avoid spending too much time on it!
 
 ## The scenario
 
@@ -95,7 +95,7 @@ As we are in frames, none of the classic css properties work to center elements,
 
 To maintain a clean and consistent code, we will create our template by surrounding each element with a parent div.
 
-So we will build our block with an image and then a text block that is supposed to be positioned on top. This is a basic example without a minimum style, which will have to be adapted for each particular case.
+So we will build our block with an image and then a text block that is supposed to be positioned on top. This is a basic example with a minimum style, which will have to be adapted for each particular case.
 
 When you use mso-elements, you may see a white dotted border around the first element used. In this case, placing the following span makes it possible to completely reduce this border. It can be placed above the first element, inside, just after the first div, or alternatively, at the highest level of the email, to be sure that any margin does not alter your design:
 
@@ -172,7 +172,10 @@ In terms of accessibility, the title and button are accessible and interpreted a
 
 ## Windows 10 & 11 
 
-On these two mailboxes, the text remains under the image and is therefore hidden. One solution is to code the thing differently, using mso-element-wrap:none. and reversing the order. That is, instead of having the image and then the text with the property mso-element-wrap: no-wrap-beside on the elements, we have first the text block, with an mso-element-wrap:none and then the image. As mentioned above, floating positioning works on Windows 10Mail if you do this, but you have a positioning problem, because Outlook forces left alignment
+On these two mailboxes, the text remains under the image and is therefore hidden. One solution is to code the thing differently, using mso-element-wrap:none. and reversing the order. That is, instead of having the image and then the text with the property mso-element-wrap: no-wrap-beside on the elements, we have first the text block, with an mso-element-wrap:none and then the image. As mentioned above, floating positioning works on Windows 10Mail if you do this, but you have a positioning problem, because Outlook forces left alignment. 
+
+Please note, however, that on the new version of Windows 10 & 11, the first version of mso-faux-absolute works perfectly. As the new version of Windows Mail will be gradually implemented during 2024, it seems pointless to me to waste time finding a solution.
+
 
 ```
 <span style="mso-element-wrap:none;mso-element-left:center;font-size:0;"></span> 
@@ -193,7 +196,7 @@ With this alternative, to keep the elements centered, we can remove the mso-elem
 ```
  <span style="mso-element-wrap:none;mso-element-left:center;font-size:0;"></span>   
       <div style="mso-element-wrap:none;mso-element-left:center;max-height:0;max-width:400px;position:relative;">
-          <div class="p-0" style="padding-top:100px;mso-margin-top-alt:100px">
+          <div style="padding-top:100px;mso-margin-top-alt:100px">
             <h1 style="margin:0 0 20px">This is my Title</h1>          
             <p style="margin:0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
             
