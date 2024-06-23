@@ -129,13 +129,7 @@
         <div class="flex-row">
           <p>This tool uses mso properties to create a bulletproof and accessible background image on Outlook. No VML here. The mso-element-wrap and mso-element-left properties create frames. For this to work, you need to avoid nesting the frame inside tables. You can use tables before and after the block, but if you place it inside a table, the properties won't work anymore. If you're coding with divs, just avoid using conditional comments around the frame.</p>
           <p>If you want to add a CTA link inside the frame, use the pedantic semantic button from <a target="_blank" href="https://www.goodemailcode.com/email-code/link-button">GoodEmailCode</a>,This is the one that will work best. You can use <a target="_blank" href="https://codepen.io/matthieuSolente/pen/abRpPOX">my generator</a> !</p>
-          <h3>How it works :</h3>
-          <ol>
-          <li>1-Enter the URL of the image to display and set the width of your email. </li>
-          <li>2-In the code, the image is encapsulated in a div which is given a maximum height of 0px. This way, the content (text, title, button) rises above the image. The indicated height is transferred to the content block: this way, the floating only takes place at the level of the background image and the following content does not accidentally float on the image.</li>
-          <li>3-the width of the frame corresponds to the desired width of the content block (text, title, cta). In outlook, especially frames, it is essential to define a width because the horizontal padding does not work.</li>
-          <li>4-The horizontal and vertical padding are used for other email clients and allow you to position the content block on the image. For Outlook, the mso-margin-top-alt property takes the value of the top/bottom padding.</li>
-        </ol>
+         
           <p>Do not hesitate to consult my <a href="https://github.com/matthieuSolente/mso-faux-absolute" target="_blank">github page</a> on the subject.</p>
           <p>The sample text is there to serve as a visual aid for adjusting content position.</p>
           <p>you can learn how to make everything responsive, by looking at <a href="https://codepen.io/matthieuSolente/pen/ZEqXgPL" target="_blank"> this codepen</a>
