@@ -47,13 +47,13 @@
               </div>
             </div>
 
-             <div class="button-generator--row">
-                <div class="button-generator--half-row">
-                  <div class="checkbox">
-                    <input class="inline checkbox" type="checkbox" name="frame-Bg-Color" id="btnBgColor">
-                    <label class="inline" for="btnBgColor">Background color ?</label>
-                  </div>
-                </div>
+             <div class="button-generator--row flex-start">
+                
+                 
+                    <input class="checkbox" type="checkbox" name="frame-Bg-Color" id="btnBgColor">&nbsp;
+                    <label  for="btnBgColor">Background color ?</label>
+                 
+                
               </div>
               <div id="bgColorInput" class="button-generator--row">
                 <div class="button-generator--half-row">
@@ -129,6 +129,7 @@
         <div class="flex-row">
           <p>This tool uses mso properties to create a bulletproof and accessible background image on Outlook. No VML here. The mso-element-wrap and mso-element-left properties create frames. For this to work, you need to avoid nesting the frame inside tables. You can use tables before and after the block, but if you place it inside a table, the properties won't work anymore. If you're coding with divs, just avoid using conditional comments around the frame.</p>
           <p>If you want to add a CTA link inside the frame, use the pedantic semantic button from <a target="_blank" href="https://www.goodemailcode.com/email-code/link-button">GoodEmailCode</a>,This is the one that will work best. You can use <a target="_blank" href="https://codepen.io/matthieuSolente/pen/abRpPOX">my generator</a> !</p>
+          <p>As this generator uses the notion of max-height on the imagen this means that you will have to add a spacer, add a padding-bottom to the bloc or increase the padding-top on the next element.</p>
          
           <p>Do not hesitate to consult my <a href="https://github.com/matthieuSolente/mso-faux-absolute" target="_blank">github page</a> on the subject.</p>
           <p>The sample text is there to serve as a visual aid for adjusting content position.</p>
