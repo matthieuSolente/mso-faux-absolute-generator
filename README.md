@@ -12,6 +12,8 @@ Here is my [codePen collection](https://codepen.io/collection/RzBzjM) on the sub
 For this to work, don't wrap all the content of your email in a table :According to my tests in any case, encapsulating the mso block in a table container can be problematic and break the desired effect.Inside the block, you can use tables sparingly to perfect the rendering on Outlook (add padding etc.) 
 You can also use table Before or after the **MSO Faux absolute** block.
 
+As this generator uses the notion of max-height on the imagen this means that you will have to add a spacer, add a padding-bottom to the bloc or increase the padding-top on the next element.
+
 There are several ways to do it, several possible layouts to make these properties work and create for example a background image with text on top. Test [my generator](https://matthieusolente.github.io/mso-faux-absolute-generator/) if you want to avoid spending too much time on it!
 
 ## The scenario
