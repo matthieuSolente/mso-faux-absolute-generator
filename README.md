@@ -28,7 +28,7 @@ For this to work in Outlook, we will use what word calls frames.
 
 **mso-element:frame**
 
-As we can read in Stig's documentation
+As we can read in [Microsoft documentation](https://stigmortenmyre.no/mso/html/word/wdconframesanddropcaps.htm)
 "Word allows the creation of floating frames in Web documents, even though there are currently no HTML elements to support this functionality"
 From the moment we use properties related to frames, like the ones we will see just after, Outlook automatically inserts into the code, the mso-element:frame property. So we don't need to specify it in our template.
 
